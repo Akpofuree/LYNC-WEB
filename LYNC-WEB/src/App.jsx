@@ -1,11 +1,5 @@
-import './App.css'
+import AppRoutes from './routes/AppRoutes';
 
-function App() {
-  return (
-    <div className='bg-black text-white text-xl p-10'>
-      Tailwind is working
-    </div>
-  )
+export default function App() {
+  return <AppRoutes />;
 }
-
-export default App
