@@ -1,5 +1,33 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'SF Pro';
+  src: url('./fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('./fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('./fonts/SFPRODISPLAYSEMIBOLDITALIC.OTF') format('opentype');
+  font-weight: 590;
+  font-style: italic; /* ✅ Only triggers on explicitly italic text */
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('./fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 @theme {
   /* Colors */
   --color-primary: #221e57;
@@ -7,8 +35,22 @@
   --color-link: #4139bd;
   --color-muted: #8c8c8c;
   --color-bgSoft: #f5f5fa;
-  --color-lightBlue: #4139bd;
-  --color-red: #ef4444;
+  --color-lightBlue: #4139bd; /* ✅ Added — was missing, causing buttons to disappear */
+
+  /* Font Family */
+  --font-sans: 'SF Pro', sans-serif;
+
+  /* Font Sizes */
+  --text-18px: 1.125rem;
+  --text-16px: 1rem;
+  --text-92px: 5.743125rem;
+  --text-24px: 1.5rem;
+  --text-16-15px: 1.009375rem;
+  --text-36px: 2.25rem;
+  --text-40px: 2.5rem;
+  --text-19-8px: 1.2375rem;
+  --text-48px: 3rem;
+  --text-32px: 2rem;
 
   /* Spacing */
   --spacing-xs: 0.5rem;

@@ -1,19 +1,20 @@
+// ✅ All variants now use theme-defined class names
 const variants = {
-  h1: 'text-h1 text-primary font-bold',
-  h2: 'text-h2 text-primary font-semibold',
-  h3: 'text-h3 text-primary font-medium',
+  h1: 'text-92px text-primary font-bold',
+  h2: 'text-48px text-primary font-semibold',
+  h3: 'text-36px text-primary font-medium',
 
-  highlight: 'text-highlight text-accent font-bold',
+  highlight: 'text-92px text-accent font-bold',
 
-  bodyLg: 'text-bodyLg text-primary',
-  bodyMd: 'text-bodyMd text-primary',
+  bodyLg: 'text-18px text-primary',
+  bodyMd: 'text-16px text-primary',
 
-  label: 'text-label text-primary font-inter',
-  link: 'text-link text-link underline cursor-pointer',
+  label: 'text-16px text-primary',
+  link: 'text-16px text-link underline cursor-pointer',
 };
 
 export default function Typography({
-  as: Tag = 'p', // 🔥 allows h1, h2, p etc
+  as: Tag = 'p',
   variant = 'bodyLg',
   children,
   className = '',
