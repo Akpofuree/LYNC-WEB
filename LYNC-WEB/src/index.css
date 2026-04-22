@@ -71,3 +71,6 @@
 html {
   scroll-behavior: smooth;
 }
+body {
+  font-family: 'SF Pro', sans-serif;
+}

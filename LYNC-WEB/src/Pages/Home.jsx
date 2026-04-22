@@ -3,6 +3,9 @@ import Hero from '../Sections/Hero';
 import bgImage from '../assets/images/radiant-bg.jpg';
 import FindingLawyer from '../Sections/FindingLawyer';
 import HowItWorks from '../Sections/HowITworks';
+import Features from '../Sections/Features';
+import Trust from '../Sections/Trust';
+import CTA from '../Sections/CTA';
 
 export default function Home() {
   return (
@@ -19,6 +22,9 @@ export default function Home() {
       <Hero />
       <FindingLawyer />
       <HowItWorks />
+      <Features />
+      <Trust />
+      <CTA />
     </div>
   );
 }

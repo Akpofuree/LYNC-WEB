@@ -5,7 +5,7 @@ import stayImage from '../assets/images/Image (2).jpg';
 
 export default function FindingLawyer() {
   return (
-    <section className="w-[90%] mx-auto">
+    <section className="w-[85%] mx-auto">
       <Typography className="text-32px font-bold">
         <p>
           Finding a lawyer is often <span className="text-accent">unclear</span>
@@ -33,7 +33,7 @@ export default function FindingLawyer() {
         </p>
       </section>
 
-      <section className="flex gap-9 justify-center text-19-8px text-primary bg-transparent space-between ">
+      <section className="flex w-[55%] mx-auto gap-9 justify-center text-19-8px text-primary  space-between ">
         <article className="flex flex-col gap-3">
           <div className="flex-1 max-w-[18rem]">
             <img

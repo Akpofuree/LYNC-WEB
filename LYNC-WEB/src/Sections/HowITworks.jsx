@@ -28,14 +28,7 @@ const NUMBER_TOP_OFFSET = '6px';
 
 export default function FindingLawyer() {
   return (
-    <section
-      className="w-full min-h-screen flex flex-col items-center justify-center px-10 py-20"
-      style={{
-        background:
-          'linear-gradient(110deg, #FEF3CC 0%, #F5E8C0 20%, #D8D0F0 60%, #C4BCE8 100%)',
-        fontFamily: 'Georgia, serif',
-      }}
-    >
+    <section className="w-[75%] mx-auto min-h-screen flex flex-col items-center justify-center  py-20">
       {/* Header above both columns */}
       <div className="flex flex-col items-center gap-1 mb-14 w-full">
         <h1
@@ -58,7 +51,7 @@ export default function FindingLawyer() {
         <div className="flex flex-col gap-10 flex-1">
           {steps.map((step) => (
             // ↓ CORRECTION — "gap-10" controls space between line+number and the text
-            <div key={step.number} className="flex flex-row items-start gap-2">
+            <div key={step.number} className="flex flex-row items-start gap-6">
               {/* ↓ CORRECTION — line and number now in normal flow (no absolute positioning)
                   gap: "6px" = space between the line bar and the number
                   Change to "10px", "14px" etc to widen that gap */}
