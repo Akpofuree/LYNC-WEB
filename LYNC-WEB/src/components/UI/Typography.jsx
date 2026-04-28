@@ -1,16 +1,16 @@
 // ✅ All variants now use theme-defined class names
 const variants = {
-  h1: 'text-92px text-primary font-bold',
-  h2: 'text-48px text-primary font-semibold',
-  h3: 'text-36px text-primary font-medium',
+  h1: 'text-[5.7rem] text-primary font-bold',
+  h2: 'text-[3rem] text-primary font-semibold',
+  h3: 'text-[2.25rem] text-primary font-medium',
 
-  highlight: 'text-92px text-accent font-bold',
+  highlight: 'text-[5.7rem] text-accent font-bold',
 
-  bodyLg: 'text-18px text-primary',
-  bodyMd: 'text-16px text-primary',
+  bodyLg: 'text-[1.125rem] text-primary',
+  bodyMd: 'text-[1rem] text-primary',
 
-  label: 'text-16px text-primary',
-  link: 'text-16px text-link underline cursor-pointer',
+  label: 'text-[1rem] text-primary',
+  link: 'text-[1rem] text-link underline cursor-pointer',
 };
 
 export default function Typography({

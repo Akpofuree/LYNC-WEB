@@ -6,11 +6,12 @@ import HowItWorks from '../Sections/HowITworks';
 import Features from '../Sections/Features';
 import Trust from '../Sections/Trust';
 import CTA from '../Sections/CTA';
+import Footer from '../components/layout/Footer';
 
 export default function Home() {
   return (
     <div
-      className="min-h-screen  bg-cover bg-center bg-no-repeat w-full pt-8"
+      className="min-h-screen bg-cover bg-center bg-no-repeat w-full pt-4"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundAttachment: 'fixed',
@@ -20,11 +21,18 @@ export default function Home() {
         <Navbar />
       </div>
       <Hero />
-      <FindingLawyer />
-      <HowItWorks />
+      <div id="features">
+        <FindingLawyer />
+      </div>
+      <div id="how">
+        <HowItWorks />
+      </div>
       <Features />
       <Trust />
-      <CTA />
+      <div id="cta">
+        <CTA />
+      </div>
+      <Footer />
     </div>
   );
 }

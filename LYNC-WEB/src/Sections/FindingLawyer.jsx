@@ -5,35 +5,38 @@ import stayImage from '../assets/images/Image (2).jpg';
 
 export default function FindingLawyer() {
   return (
-    <section className="w-[85%] mx-auto">
-      <Typography className="text-32px font-bold">
-        <p>
-          Finding a lawyer is often <span className="text-accent">unclear</span>
-        </p>
-        <p>
-          Pricing is <span className="text-accent">inconsistent</span>
-        </p>
-        <p>
-          And for many individuals and businesses, legal processes feel{' '}
-          <span className="text-accent">overwhelming</span>
-        </p>
-        <p>
-          Most people only seek legal help when its already{' '}
-          <span className="text-accent">urgent</span>
-        </p>
-      </Typography>
+    <section className="  lg:w-[85%] lg:mx-auto">
+      <div className=" text-[9px] font-bold flex justify-center flex-col items-center lg:block w-[100%] mx-auto text-center lg:text-left  lg:w-[98%] lg:mx-auto ">
+        <Typography>
+          <p>
+            Finding a lawyer is often{' '}
+            <span className="text-accent">unclear</span>
+          </p>
+          <p>
+            Pricing is <span className="text-accent">inconsistent</span>
+          </p>
+          <p className="">
+            And for many individuals and businesses, legal processes feel{' '}
+            <span className="text-accent">overwhelming</span>
+          </p>
+          <p>
+            Most people only seek legal help when its already{' '}
+            <span className="text-accent">urgent</span>
+          </p>
+        </Typography>
+      </div>
 
       <section className="flex flex-col justify-center text-primary text-24px pb-20 font-semibold mt-22 w-full text-center mx-auto">
-        <p className="text-accent text-32px w-[418px] mx-auto">
+        <p className="text-accent lg:text-32px w-[418px] mx-auto">
           LYNC makes legal access clear and structured
         </p>
-        <p className="w-[616px] mx-auto">
+        <p className="lg:w-[616px] lg:mx-auto w-[190px] lg:text-32px text-16px mx-auto">
           Instead of relying on referals and guesswork, LYNC gives you a simple
           way to find the right legal support when you need it
         </p>
       </section>
 
-      <section className="flex w-[55%] mx-auto gap-9 justify-center text-19-8px text-primary  space-between ">
+      <section className="flex lg:w-[55%] w-[30%] mx-auto lg:mx-auto lg:gap-9 justify-center text-19-8px text-primary lg:space-between ">
         <article className="flex flex-col gap-3">
           <div className="flex-1 max-w-[18rem]">
             <img

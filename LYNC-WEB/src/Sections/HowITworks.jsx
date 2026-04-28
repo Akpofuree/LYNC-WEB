@@ -46,7 +46,7 @@ export default function FindingLawyer() {
       </div>
 
       {/* Two columns side by side */}
-      <div className="flex flex-row items-start gap-16 w-full max-w-7xl">
+      <div className="flex lg:flex-row flex-col items-start gap-16 w-full max-w-7xl">
         {/* LEFT — Steps */}
         <div className="flex flex-col gap-10 flex-1">
           {steps.map((step) => (
