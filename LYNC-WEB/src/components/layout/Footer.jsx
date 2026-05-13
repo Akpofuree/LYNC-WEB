@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+
 const FacebookIcon = () => (
   <svg
     width="18"
@@ -84,18 +85,64 @@ const socialLinks = [
 export default function Footer() {
   const { pathname } = useLocation();
   const visibleNavLinks = navLinks.filter((link) => link.to !== pathname);
+
   return (
-    <footer className="w-full  border-[#2c244a]/10">
-      {/* ── Main row ── */}
-      <div className="flex items-end justify-between max-w-7xl mx-auto px-12 pt-7 pb-5 gap-6">
-        {/* Left — tagline, sits at the bottom */}
+    <footer className="w-full mt-8 lg:px-12 border-[#2c244a]/10">
+      {/* ── MOBILE / TABLET layout (hidden on lg+) ── */}
+      <div className="lg:hidden flex flex-col w-full">
+        {/* Top divider line */}
+        <div className="w-full h-px bg-[#2c244a]/20" />
+
+        {/* Tagline */}
+        <div className="flex justify-center py-4">
+          <p className="text-[#2c244a] text-sm font-semibold tracking-wide">
+            Legal access, simplified.
+          </p>
+        </div>
+
+        {/* Nav links row */}
+        <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 pb-4 px-4">
+          {visibleNavLinks.map(({ label, to }) => (
+            <Link
+              key={label}
+              to={to}
+              className="text-[#2c244a] text-xs font-medium tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Divider line above social icons */}
+        <div className="w-full h-px bg-[#2c244a]/20" />
+
+        {/* Social icons */}
+        <div className="flex justify-center items-center gap-6 py-5">
+          {socialLinks.map(({ icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              aria-label={label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#2c244a] opacity-80 hover:opacity-100 hover:-translate-y-0.5 transition-all duration-200"
+            >
+              {icon}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* ── DESKTOP layout (hidden below lg) ── */}
+      <div className="hidden lg:flex items-end justify-between max-w-7xl mx-auto px-12 pt-7 pb-5 gap-6">
+        {/* Left — tagline */}
         <div className="flex-1 flex items-end">
           <p className="text-[#2c244a] text-sm font-semibold tracking-wide whitespace-nowrap">
             Legal access, simplified.
           </p>
         </div>
 
-        {/* Center — social icons, elevated above left & right baseline */}
+        {/* Center — social icons */}
         <div className="flex-1 flex justify-center self-center -translate-y-1.5">
           <div className="flex items-center gap-5">
             {socialLinks.map(({ icon, href, label }) => (
@@ -113,7 +160,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Right — nav links, sits at the bottom */}
+        {/* Right — nav links */}
         <div className="flex-1 flex justify-end items-end">
           <nav
             aria-label="Footer navigation"
@@ -132,7 +179,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Dark bottom bar ── */}
+      {/* ── Dark bottom bar (both layouts) ── */}
       <div className="w-full h-2 bg-[#1a1625]" />
     </footer>
   );

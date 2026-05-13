@@ -16,23 +16,13 @@ const steps = [
   },
 ];
 
-// ─── CONTROLS ────────────────────────────────────────────────────────────────
-// 1. NUMBER vertical position on the line — increase to push down, decrease to push up
-const NUMBER_TOP_OFFSET = '6px';
-
-// 2. SPACE BETWEEN LINE+NUMBER and the title text — change "gap-10" on the
-//    step row div. Scale: gap-4 (tight) → gap-6 → gap-8 → gap-10 → gap-16 (wide)
-
-// 3. SPACE BETWEEN LINE and NUMBER — change the gap "6px" on the line+number wrapper
-// ─────────────────────────────────────────────────────────────────────────────
-
 export default function FindingLawyer() {
   return (
-    <section className="w-[75%] mx-auto min-h-screen flex flex-col items-center justify-center  py-20">
-      {/* Header above both columns */}
-      <div className="flex flex-col items-center gap-1 mb-14 w-full">
+    <section className="w-full px-4 lg:w-[75%] pt-[98px] lg:px-0 mx-auto py-[70px] lg:min-h-screen flex flex-col items-center justify-center lg:py-20">
+      {/* Header */}
+      <div className="flex flex-col items-center gap-1 mb-4 lg:mb-14 w-full">
         <h1
-          className="text-5xl font-bold text-center"
+          className="text-[14px] lg:text-5xl font-bold text-center"
           style={{ color: '#1E1654' }}
         >
           How LYNC works
@@ -45,53 +35,52 @@ export default function FindingLawyer() {
         </p>
       </div>
 
-      {/* Two columns side by side */}
-      <div className="flex lg:flex-row flex-col items-start gap-16 w-full max-w-7xl">
+      {/* Two columns */}
+      <div className="flex lg:flex-row flex-col  gap-8 lg:gap-16 w-full">
         {/* LEFT — Steps */}
-        <div className="flex flex-col gap-10 flex-1">
+        <div className="flex flex-col gap-6 lg:gap-10 flex-1 w-fit mx-auto lg:mx-0 lg:items-start">
+          {' '}
           {steps.map((step) => (
-            // ↓ CORRECTION — "gap-10" controls space between line+number and the text
             <div key={step.number} className="flex flex-row items-start gap-6">
-              {/* ↓ CORRECTION — line and number now in normal flow (no absolute positioning)
-                  gap: "6px" = space between the line bar and the number
-                  Change to "10px", "14px" etc to widen that gap */}
-              <div
-                className="flex flex-row items-start shrink-0"
-                style={{ gap: '6px' }}
-              >
-                {/* Vertical amber line */}
+              {/* Line + Number wrapper
+                  small: items-center so number is vertically centred on the short line
+                  large: items-start so number sits at the top of the tall line */}
+              <div className="flex flex-row items-center lg:items-start shrink-0 gap-[6px]">
+                {/* Vertical amber line
+                    small: h-[18px] — just tall enough to match the title beside it
+                    large: h-[72px] — original full height
+                    mt only on large (items-center on small makes mt unnecessary) */}
                 <div
-                  style={{
-                    width: '2px',
-                    height: '72px',
-                    backgroundColor: '#F5A210',
-                    marginTop: '2px',
-                  }}
+                  className="w-[2px] h-[18px] lg:h-[72px] lg:mt-[2px]"
+                  style={{ backgroundColor: '#F5A210' }}
                 />
 
-                {/* Number beside the line
-                    ↓ marginTop = NUMBER_TOP_OFFSET controls vertical position */}
+                {/* Number
+                    small: 14px
+                    large: text-sm (original) */}
                 <span
-                  className="text-sm font-bold tracking-wider"
-                  style={{
-                    color: '#F5A210',
-                    lineHeight: 1,
-                    marginTop: NUMBER_TOP_OFFSET,
-                  }}
+                  className="text-[14px] lg:text-sm font-bold tracking-wider"
+                  style={{ color: '#F5A210', lineHeight: 1 }}
                 >
                   {step.number}
                 </span>
               </div>
 
-              {/* Step text — now properly spaced by gap-10 above */}
+              {/* Title + Description */}
               <div className="flex flex-col gap-1 pt-0.5">
+                {/* small: 11px semibold | large: 2xl semibold (original) */}
                 <h3
-                  className="text-2xl font-semibold"
+                  className="text-[11px] font-semibold lg:text-2xl"
                   style={{ color: '#1E1654' }}
                 >
                   {step.title}
                 </h3>
-                <p className="text-base" style={{ color: '#5651A0' }}>
+
+                {/* small: 10px weight-400 | large: text-base (original) */}
+                <p
+                  className="text-[10px] font-normal lg:text-base"
+                  style={{ color: '#5651A0' }}
+                >
                   {step.description}
                 </p>
               </div>
@@ -99,46 +88,58 @@ export default function FindingLawyer() {
           ))}
         </div>
 
-        {/* RIGHT — Comparison card */}
+        {/* RIGHT — Comparison card
+            small: 284×117px, reduced padding & gap
+            large: 352×217px, original padding & gap */}
         <div
-          className="flex flex-col shrink-0"
+          className="
+            flex flex-col shrink-0 mx-auto 
+            w-[314px] h-[127px]       lg:w-[352px] lg:h-[217px]
+            pt-[14px]  pb-[30px] pl-[16px]
+            lg:pt-[36px] lg:pr-[28px] lg:pb-[36px] lg:pl-[28px]
+            gap-[10px] lg:gap-[20px]
+          "
           style={{
-            width: '352px',
-            height: '217px',
             border: '1px solid #F5A210',
-            borderRadius: '4px',
-            paddingTop: '36px',
-            paddingRight: '28px',
-            paddingBottom: '36px',
-            paddingLeft: '28px',
-            gap: '20px',
             backgroundColor: 'rgba(255,255,255,0.18)',
             backdropFilter: 'blur(8px)',
             boxSizing: 'border-box',
           }}
         >
-          <div className="flex flex-col gap-0.5">
+          {/* Traditional Approach */}
+          <div className="flex flex-col gap-2.5 lg:gap-0.5">
+            {/* Label — small: 10px bold | large: xs semibold tracking-widest (original) */}
             <span
-              className="text-xs font-semibold tracking-widest uppercase"
+              className="text-[10px] font-bold lg:text-xs lg:font-semibold tracking-widest uppercase"
               style={{ color: '#F5A210' }}
             >
               Traditional Approach
             </span>
-            <span className="text-3xl font-light" style={{ color: '#1E1654' }}>
+            {/* Value — small: 9px normal | large: 3xl light (original) */}
+            <span
+              className="text-[9px] font-normal lg:text-3xl lg:font-light"
+              style={{ color: '#1E1654' }}
+            >
               Weeks → Months
             </span>
           </div>
 
           <div style={{ borderTop: '1px solid #F5A210', opacity: 0.4 }} />
 
-          <div className="flex flex-col gap-0.5">
+          {/* With LYNC */}
+          <div className="flex flex-col gap-2.5 lg:gap-0.5">
+            {/* Label — small: 10px bold | large: xs semibold tracking-widest (original) */}
             <span
-              className="text-xs font-semibold tracking-widest uppercase"
+              className="text-[10px] font-bold lg:text-xs lg:font-semibold tracking-widest uppercase"
               style={{ color: '#F5A210' }}
             >
               With LYNC
             </span>
-            <span className="text-3xl font-light" style={{ color: '#1E1654' }}>
+            {/* Value — small: 9px normal | large: 3xl light (original) */}
+            <span
+              className="text-[9px] font-normal lg:text-3xl lg:font-light"
+              style={{ color: '#1E1654' }}
+            >
               Seconds
             </span>
           </div>

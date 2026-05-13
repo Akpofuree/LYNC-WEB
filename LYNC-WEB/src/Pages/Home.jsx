@@ -17,9 +17,7 @@ export default function Home() {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="pt-4">
-        <Navbar />
-      </div>
+      <Navbar />
       <Hero />
       <div id="features">
         <FindingLawyer />

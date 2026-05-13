@@ -40,22 +40,24 @@ export default function Features() {
   return (
     <section className="lg:w-[85%] lg:mx-auto lg:block w-[100%] flex flex-col justify-center items-center">
       {/* Section Header */}
-      <div className="flex flex-col items-center  gap-4 mt-22 pb-20">
-        <h2 className="lg:text-40px text-primary">
+      <div className="flex flex-col items-center lg:font-semibold font-[590] px-4 lg:px-0 lg:mt-22 mb-20 ">
+        <h2 className="lg:text-40px pb-2 lg:pb-0  text-13px leading-[117%] w-[270px] mx-auto lg:w-full text-center text-primary">
           Everything you need to navigate legal matters
         </h2>
-        <p className="lg:text-32px text-lightBlue text-center lg:w-[800px] lg:mx-auto">
-          Any business that answers phone calls is a potential client. That is
-          millions of businesses
+        <p className="lg:text-32px  text-lightBlue text-13px w-[310px] mx-auto  text-center lg:w-[850px] lg:mx-auto">
+          Any business that answers phone calls is a potential client.
+        </p>
+        <p className="lg:text-32px pt-4 lg:pt-0 text-lightBlue text-12px w-full text-center lg:w-[600px] lg:mx-auto">
+          That is millions of businesses
         </p>
       </div>
 
       {/* Feature Cards */}
-      <div className="grid lg:grid-cols-4 grid-cols-2 gap:2 lg:gap-6">
+      <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 lg:gap-6">
         {features.map((feature) => (
           <article key={feature.title} className="flex flex-col gap-1">
             {/* Image */}
-            <div className="lg:w-full w-[80%] mx-auto aspect-[6/4]  lg:aspect-[4/3] overflow-hidden">
+            <div className="lg:w-full w-[80%] mx-auto h-[240px] lg:h-[300px] overflow-hidden">
               <img
                 src={feature.image}
                 alt={feature.alt}
@@ -64,10 +66,10 @@ export default function Features() {
             </div>
 
             {/* Text */}
-            <p className="text-24px lg:w-full lg:text-left text-center  w-[80%] mx-auto text-primary font-bold">
+            <p className="lg:text-24px lg:w-full lg:text-left text-center  w-[90%] mx-auto text-primary font-bold">
               {feature.title}
             </p>
-            <p className="text-24px lg:w-full w-[80%] mx-auto lg:text-left text-center  text-lightBlue ${feature.descriptionWidth}">
+            <p className="lg:text-24px text-[10px] font-semibold w-[180px] mx-auto lg:w-full w-[100%] mx-auto lg:text-left text-center  text-lightBlue ${feature.descriptionWidth}">
               {feature.description}
             </p>
           </article>
