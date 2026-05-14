@@ -2,6 +2,9 @@ import AboutNavbar from '../components/layout/AboutNavbar';
 import Footer from '../components/layout/Footer';
 import bgImage from '../assets/images/radiant-bg.jpg';
 
+const contactButtonClass =
+  'inline-flex items-center justify-center w-[124px] h-[49px] bg-[#4139bd] text-white font-semibold rounded-[8px] px-[18.46px] py-[9.23px] text-sm';
+
 const sections = [
   {
     title: '1. Introduction',
@@ -116,11 +119,11 @@ export default function Privacy() {
       </div>
 
       <main className="flex-1 px-4 py-2 md:px-8 md:py-10">
-        <h1 className="text-center text-32px md:text-40px font-bold mb-2">
+        <h1 className="text-center leading-[150%] text-32px md:text-40px font-bold my-6 lg:mb-2">
           <span className="text-primary">Privacy </span>
           <span className="text-accent">Policy</span>
         </h1>
-        <div className="w-full max-w-6xl mx-auto rounded-[18px] bg-white/40 px-6 py-8 md:px-10 md:py-10 shadow-[0_10px_40px_rgba(34,30,87,0.08)]">
+        <div className="w-full max-w-6xl mx-auto rounded-[18px] bg-[#f5a210]/14 px-6 py-8 md:px-10 md:py-10 shadow-[0_10px_40px_rgba(34,30,87,0.08)]">
           <div className="space-y-8 text-primary">
             {sections.map((section) => (
               <section key={section.title}>
@@ -168,7 +171,7 @@ export default function Privacy() {
                     if (isBullet) {
                       return (
                         <p key={index} className="pl-4 relative">
-                          <span className="absolute left-0 top-0">-</span>
+                          <span className="absolute left-0 top-0">•</span>
                           {line}
                         </p>
                       );
@@ -177,6 +180,22 @@ export default function Privacy() {
                     return <p key={index}>{line}</p>;
                   })}
                 </div>
+
+                {section.title === '6. Your Rights' && (
+                  <div className="mt-4">
+                    <button type="button" className={contactButtonClass}>
+                      Contact Us
+                    </button>
+                  </div>
+                )}
+
+                {section.title === '10. Contact Us' && (
+                  <div className="mt-4">
+                    <button type="button" className={contactButtonClass}>
+                      Contact Us
+                    </button>
+                  </div>
+                )}
               </section>
             ))}
           </div>

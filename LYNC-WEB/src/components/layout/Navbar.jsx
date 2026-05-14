@@ -10,12 +10,16 @@ export default function Navbar() {
 
   const scrollToSection = (id) => {
     if (location.pathname === '/') {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      document
+        .getElementById(id)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
       navigate('/');
       setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-      }, 150);
+        document
+          .getElementById(id)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
     }
   };
 

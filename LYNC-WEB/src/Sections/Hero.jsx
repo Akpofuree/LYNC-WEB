@@ -38,16 +38,17 @@ export default function Hero() {
 
             {/* Buttons — centered on mobile */}
             <div className="flex flex-row items-center justify-center gap-4 mt-1 lg:justify-start lg:gap-5 lg:mt-2">
-              <button
+              <Link
+                to="/lawyers"
                 className="
                   bg-lightBlue text-white rounded-[4px] lg:rounded-md lg:rounded-lg font-semibold
                   hover:opacity-90 transition-opacity
                   w-[124px] h-[29px] text-[12px]
-                  lg:w-[210px] lg:h-49px lg:px-md lg:py-sm lg:text-sm lg:flex lg:justify-center lg:items-center
+                  lg:w-[210px] lg:h-49px lg:px-md lg:py-sm lg:text-sm flex justify-center items-center
                 "
               >
                 Find a Lawyer
-              </button>
+              </Link>
               <Link
                 to="/lawyers"
                 className="text-[14px] font-semibold leading-[140%] flex  gap-1 justify-center items-center  text-[#f5a210] hover:underline lg:text-sm"
